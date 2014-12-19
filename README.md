@@ -7,5 +7,8 @@
 * http://my.oschina.net/BreathL/blog/42477
   	
 ### Use:
-* $obj = new TextSimilarity ($text1, $text2);
-* echo $obj->run();
+
+```php
+$obj = new TextSimilarity ($text1, $text2);
+echo $obj->run();
+```
