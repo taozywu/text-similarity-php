@@ -12,6 +12,7 @@
 *   $obj = new TextSimilarity ($text1, $text2);
 *   echo $obj->run();
 */
+
 Class TextSimilarity {
     /**
      * [排除的词语]
@@ -19,24 +20,28 @@ Class TextSimilarity {
      * @var array
      */
     private $_excludeArr = array('的','了','和','呢','啊','哦','恩','嗯','吧');
+    
     /**
      * [词语分布数组]
      *
      * @var array
      */
     private $_words = array();
+    
     /**
      * [分词后的数组一]
      *
      * @var array
      */
     private $_segList1 = array();
+    
     /**
      * [分词后的数组二]
      *
      * @var array
      */
     private $_segList2 = array();
+    
     /**
      * [分词两段文字]
      *
@@ -48,6 +53,7 @@ Class TextSimilarity {
         $this->_segList1 = $this->segment($text1);
         $this->_segList2 = $this->segment($text2);
     }
+    
     /**
      * [外部调用]
      *
@@ -59,6 +65,7 @@ Class TextSimilarity {
         $rate = $this->handle();
         return $rate ? $rate : 'errors';
     }
+    
     /**
      * [分析两段文字]
      */
@@ -86,6 +93,7 @@ Class TextSimilarity {
             }
         }
     }
+    
     /**
      * [处理相似度]
      *
@@ -103,6 +111,7 @@ Class TextSimilarity {
         $rate = $sum / (sqrt($sumT1 * $sumT2));
         return $rate;
     }
+    
     /**
      * [分词  【http://www.xunsearch.com/scws/docs.php#pscws23】]
      *
@@ -133,4 +142,5 @@ Class TextSimilarity {
         
         return $outText;
     }
+    
 }
