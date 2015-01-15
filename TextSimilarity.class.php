@@ -69,7 +69,7 @@ Class TextSimilarity {
     /**
      * [分析两段文字]
      */
-    private fucntion analyse()
+    private function analyse()
     {
         //t1
         foreach($this->_segList1 as $v){
@@ -101,7 +101,7 @@ Class TextSimilarity {
      */
     private function handle()
     {
-        $sum = 0 = $sumT1 = $sumT2 = 0;
+        $sum = $sumT1 = $sumT2 = 0;
         foreach($this->_words as $word){
             $sum    += $word[0] * $word[1];
             $sumT1  += pow($word[0],2);
