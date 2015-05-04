@@ -9,6 +9,9 @@
 ### Use:
 
 ```php
+<?php
+
 $obj = new TextSimilarity ($text1, $text2);
 echo $obj->run();
+
 ```
