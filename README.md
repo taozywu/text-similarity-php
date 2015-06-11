@@ -1,5 +1,7 @@
 ## 通过余弦定理+分词计算文本相似度PHP版
 
+[![Build Status](https://travis-ci.org/xiaobeicn/text-similarity-php.png)](https://travis-ci.org/xiaobeicn/text-similarity-php)
+
 ---
 
 ### 参考：
