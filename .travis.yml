@@ -8,7 +8,6 @@ env:
   matrix: 
     - GEN_JSB=YES 
     - PLATFORM=linux 
-    DEBUG=1
 
 notifications: 
   email: false
