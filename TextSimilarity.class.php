@@ -1,4 +1,5 @@
 <?php
+namespace Ccc\Third;
 /*
 *   文本相似度（余弦定理）
 *   
@@ -85,7 +86,7 @@ Class TextSimilarity {
         //t2
         foreach($this->_segList2 as $v){
             if( !in_array($v , $this->_excludeArr) ){
-                if( !array_key_exists($v , $words) ){
+                if( !array_key_exists($v , $this->_words) ){
                     $this->_words[$v] = array(0 , 1);
                 }else{
                     $this->_words[$v][1] += 1;
@@ -103,11 +104,11 @@ Class TextSimilarity {
     {
         $sum = $sumT1 = $sumT2 = 0;
         foreach($this->_words as $word){
-            $sum    += $word[0] * $word[1];
+            $sum    += ($word[0] * $word[1]);
             $sumT1  += pow($word[0],2);
             $sumT2  += pow($word[1],2);
         }
-        
+
         $rate = $sum / (sqrt($sumT1 * $sumT2));
         return $rate;
     }
@@ -134,7 +135,7 @@ Class TextSimilarity {
         //便利出需要的数组
         while($res = $so->get_result()){
             foreach($res as $v){
-                $outText[] = $v['word'];
+                $outText[] = isset($v['word']) ? strtoupper($v['word']) : "";
             }
         }
         //关闭
