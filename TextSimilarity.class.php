@@ -85,7 +85,7 @@ Class TextSimilarity {
         //t2
         foreach($this->_segList2 as $v){
             if( !in_array($v , $this->_excludeArr) ){
-                if( !array_key_exists($v , $words) ){
+                if( !array_key_exists($v , $this->_words) ){
                     $this->_words[$v] = array(0 , 1);
                 }else{
                     $this->_words[$v][1] += 1;
@@ -134,7 +134,7 @@ Class TextSimilarity {
         //便利出需要的数组
         while($res = $so->get_result()){
             foreach($res as $v){
-                $outText[] = $v['word'];
+                $outText[] = isset($v['word']) ? strtoupper($v['word']) : "";
             }
         }
         //关闭
